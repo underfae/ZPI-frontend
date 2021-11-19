@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
+
+.wrapper {
+  width: 100%;
+  padding: 0 70px;
+  height: $header-height;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 50%;
+    width: auto;
+  }
+  .menu {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    button {
+      border-radius: 23px;
+      margin: 0 $margin-regular;
+      width: $header-button-width;
+      font-size: $fs-regular;
+      font-weight: $fw-bold !important;
+      height: 45px;
+    }
+    .active-link {
+      background-color: $basic-color;
+      color: white;
+    }
+  }
+}
+
+hr {
+  margin: $line-margin;
+  height: 1px;
+  background-color: $basic-color;
+}
