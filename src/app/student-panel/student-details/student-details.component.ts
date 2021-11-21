@@ -8,15 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class StudentDetailsComponent implements OnInit {
   userData = {
     name: 'Katarzyna Pycińska',
-    kierunek: 'Informatyka',
-    uczelnia: 'Politechnika Krakowska',
-    nr_albumu: '126429',
-    adres: 'ul. Lea 334',
-    wojewodztwo: 'małopolskie',
+    specialization: 'Informatyka',
+    school: 'Politechnika Krakowska',
+    album_number: '126429',
+    adress: 'ul. Lea 334',
+    region: 'małopolskie',
     city: 'Kraków',
-    data_urodzenia: '05.06.1998',
+    birthdate: '05.06.1998',
     pesel: '12345678921',
-    miejsce_urodzenia: 'Kraków',
+    birthplace: 'Kraków',
+    date: '17.03.2022r.',
+    topic: 'Intraktywny elektroniczny dziennik zajęć',
+    promoter: 'Jan Kowalski',
+    reviewer: 'Anna Smoła'
   };
 
   constructor() {}

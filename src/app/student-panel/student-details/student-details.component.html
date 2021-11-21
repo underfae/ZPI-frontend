@@ -14,29 +14,51 @@
                 Dane Studenta
             </div>
             <div class="s2">
-                <div class="ss1">
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
-                    <app-readonly-field name="Uczelnia" value="{{userData.uczelnia}}"></app-readonly-field>
-                    <app-readonly-field name="Data urodzenia" value="{{userData.data_urodzenia}}"></app-readonly-field>
+                <div class="column1">
+                    <app-readonly-field name="Kierunek" value="{{userData.specialization}}"></app-readonly-field>
+                    <app-readonly-field name="Uczelnia" value="{{userData.school}}"></app-readonly-field>
+                    <app-readonly-field name="Nr albumu" value="{{userData.album_number}}"></app-readonly-field>
                 </div>
-                <div class="ss2">
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
+                <div class="column2">
+                    <app-readonly-field name="Adres" value="{{userData.adress}}"></app-readonly-field>
+                    <app-readonly-field name="Województwo" value="{{userData.region}}"></app-readonly-field>
+                    <app-readonly-field name="Miasto" value="{{userData.city}}"></app-readonly-field>
                 </div>
-                <div class="ss3">
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
-                    <app-readonly-field name="Kierunek" value="{{userData.kierunek}}"></app-readonly-field>
+                <div class="column3">
+                    <app-readonly-field name="Data urodzenia" value="{{userData.birthdate}}"></app-readonly-field>
+                    <app-readonly-field name="Pesel" value="{{userData.pesel}}"></app-readonly-field>
+                    <app-readonly-field name="Miejsce urodzenia" value="{{userData.birthplace}}"></app-readonly-field>
                 </div>
             </div>
         </div>
     </div>
     <div class="section3">
+        <div class="student-data">
+        <div class="s1">
+            Dane pracy dyplomowej
+        </div>
+        <div class="s2">
+            <div class="column1">
+                <app-readonly-field name="Promotor" value="{{userData.promoter}}"></app-readonly-field>
+                <app-readonly-field name="Data obrony" value="{{userData.date}}"></app-readonly-field>
+            </div>
+            <div class="column2">
+                <app-readonly-field name="Recenzent" value="{{userData.reviewer}}"></app-readonly-field>
+                <app-readonly-field name="Temat" value="{{userData.topic}}"></app-readonly-field>
+            </div>
+            <div class="column3">
 
+            </div>
+        </div>
+    </div>
     </div>
     <div class="section4">
-
+        <div class="download-subject">
+            Pobierz przedmioty studenta!
+        </div>
+        <div class="download-subject-btn">
+            <button class="button1">Pobierz przedmioty</button>
+        </div>
     </div>
 
 </div>

@@ -39,19 +39,71 @@
         font-size: 18px;
         justify-content: space-between;
 
-        .ss1{
+        .column1{
             display: flex;
             flex-direction: column;
         }
-        .ss2{
+        .column2{
             display: flex;
             flex-direction: column;
         }
-        .ss3{
+        .column3{
             display: flex;
             flex-direction: column;
         }
     }
+}
+
+.section3 {
+    height: 210px;
+    padding:20px 92px 11px 92px;
+    .s1{
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    .s2{
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        justify-content: space-between;
+        padding-top: 20px;
+
+        .column1{
+            display: flex;
+            flex-direction: column;
+        }
+        .column2{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.section4 {
+    height: 135x;
+    background-color: #f8f8f8;
+    padding:18px 92px 11px 92px;
+    display: flex;
+    justify-content: center;
+    .download-subject{
+        font-size: 24px;
+        margin:12px 40px 0px 0px;
+        display: flex;
+    }
+    .download-subject-btn{
+        display: flex;
+        flex-direction: row;
+        margin:0px 0px 0px 40px;
+    }
+}
+.button1{
+    width: 234px; 
+    height: 44px;
+    border-radius: 30px;
+    background-color: #2A6CCE;
+    color: white;
+    font-size: $fs-regular;
+    
 }
 
 app-readonly-field{
