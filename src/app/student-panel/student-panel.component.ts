@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-student-panel',
+  selector: 'app-student-details',
   templateUrl: './student-panel.component.html',
-  styleUrls: ['./student-panel.component.scss']
+  styleUrls: ['./student-panel.component.scss'],
 })
 export class StudentPanelComponent implements OnInit {
+ 
 
-  constructor() { }
+  constructor(protected router:Router, protected route: ActivatedRoute) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  redirect(){
+    this.router.navigate(["student-details"])
   }
-
 }

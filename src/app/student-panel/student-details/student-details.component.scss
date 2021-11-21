@@ -1,0 +1,64 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.wrapper {
+  width: 100%;
+  height: calc(100% - 102px);
+}
+.section1 {
+
+    height: 315px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 62px;
+
+    align-items: center;
+    justify-content: space-between;
+    .student{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 36px;
+        font-weight: 400;
+        .name{
+            margin-left: 65px;
+        }
+    }
+}
+.section2 {
+    height: 230px;
+    background-color: #f8f8f8;
+    padding:18px 92px 11px 92px;
+    .s1{
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    .s2{
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        justify-content: space-between;
+
+        .ss1{
+            display: flex;
+            flex-direction: column;
+        }
+        .ss2{
+            display: flex;
+            flex-direction: column;
+        }
+        .ss3{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+app-readonly-field{
+    margin-bottom: 14px;
+}
+
+img {
+    height: 200px;
+    width: auto;
+  }
