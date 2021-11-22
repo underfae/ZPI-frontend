@@ -23,7 +23,7 @@
       width: $header-button-width;
       font-size: $fs-regular;
       font-weight: $fw-bold !important;
-      height: 45px;
+      height: $header-button-height;
     }
     .active-link {
       background-color: $basic-color;

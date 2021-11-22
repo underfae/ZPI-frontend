@@ -1,0 +1,70 @@
+<div class='wrapper'>
+  <div class="section1">
+    <div class="student">
+      <img src="../../assets/images/avatar.png">
+      <div class="name">
+        {{userData.name}}
+      </div>
+    </div>
+    <img src="../../assets/images/graduation.png">
+  </div>
+  <div class="section2">
+    <div class="student-data">
+      <div class="description">
+        Dane Studenta
+      </div>
+      <div class="student-information">
+        <div class="column1">
+          <app-readonly-field name="Kierunek" value="{{userData.specialization}}"></app-readonly-field>
+          <app-readonly-field name="Uczelnia" value="{{userData.school}}"></app-readonly-field>
+          <app-readonly-field name="Nr albumu" value="{{userData.album_number}}"></app-readonly-field>
+        </div>
+        <div class="column2">
+          <app-readonly-field name="Adres" value="{{userData.adress}}"></app-readonly-field>
+          <app-readonly-field name="Województwo" value="{{userData.region}}"></app-readonly-field>
+          <app-readonly-field name="Miasto" value="{{userData.city}}"></app-readonly-field>
+        </div>
+        <div class="column3">
+          <app-readonly-field name="Data urodzenia" value="{{userData.birthdate}}"></app-readonly-field>
+          <app-readonly-field name="Pesel" value="{{userData.pesel}}"></app-readonly-field>
+          <app-readonly-field name="Miejsce urodzenia" value="{{userData.birthplace}}"></app-readonly-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section3">
+    <div class="thesis-data">
+      <div class="description">
+        Dane pracy dyplomowej
+      </div>
+      <div class="thesis-information">
+        <div class="column1">
+          <app-readonly-field name="Promotor" value="{{userData.promoter}}"></app-readonly-field>
+          <app-readonly-field name="Data obrony" value="{{userData.date}}"></app-readonly-field>
+        </div>
+        <div class="column2">
+          <app-readonly-field name="Recenzent" value="{{userData.reviewer}}"></app-readonly-field>
+          <app-readonly-field name="Temat" value="{{userData.topic}}"></app-readonly-field>
+        </div>
+        <div class="column3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section4" *ngIf='!subjectOpen'>
+    <span>Pobierz przedmioty studenta!</span>
+    <button mat-raised-button color='primary' (click)='downloadSubjects()'>Pobierz przedmioty</button>
+  </div>
+  <ng-container *ngIf='subjectOpen'>
+    <div class="subjects">
+      <div class="header"> Przedmioty studenta</div>
+      <div class="subject" *ngFor="let element of subjectsData">
+        <div class="subject-name">{{element.name}}</div>
+        <div class="semester">Semestr {{element.semester}}</div>
+        <button mat-raised-button color='primary'>Zobacz pytania</button>
+      </div>
+      <div class="show-more">Zobacz więcej przedmiotów</div>
+    </div>
+  </ng-container>
+</div>

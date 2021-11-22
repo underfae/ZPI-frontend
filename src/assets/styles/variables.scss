@@ -1,14 +1,20 @@
 $header-height: 100px;
 $header-button-width: 180px;
+$header-button-height: 45px;
 $line-margin: 0 62px;
-
+$section-w-o-header-height: calc(100% - 102px);
+$button-border-radius: 30px;
+$section-padding: 18px 92px;
 // ---------------- MARGINS ------------
+$margin-small: 14px;
 $margin-regular: 24px;
+$margin-xl: 65px;
 
 //----------------FONT SIZE -----------
 $fs-regular: 18px;
 $fs-medium: 24px;
 $fs-large: 48px;
+$fs-xl: 36px;
 
 //----------------FONT WEIGHT -----------
 $fw-regular: 300;
