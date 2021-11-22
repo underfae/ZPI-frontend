@@ -22,8 +22,11 @@ export class StudentDetailsComponent implements OnInit {
     promoter: 'Jan Kowalski',
     reviewer: 'Anna Smoła'
   };
+  subjectOpen:boolean=false;
 
   constructor() {}
-
+  downloadSubjects(){
+    this.subjectOpen=true;
+  }
   ngOnInit(): void {}
 }

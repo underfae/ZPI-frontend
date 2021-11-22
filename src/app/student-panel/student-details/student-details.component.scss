@@ -7,7 +7,7 @@
 }
 .section1 {
 
-    height: 315px;
+    height: 40%;
     display: flex;
     flex-direction: row;
     padding: 0 62px;
@@ -26,14 +26,14 @@
     }
 }
 .section2 {
-    height: 230px;
+    height: 25%;
     background-color: #f8f8f8;
     padding:18px 92px 11px 92px;
-    .s1{
+    .description{
         font-size: 24px;
         margin-bottom: 24px;
     }
-    .s2{
+    .student-information{
         display: flex;
         flex-direction: row;
         font-size: 18px;
@@ -55,13 +55,13 @@
 }
 
 .section3 {
-    height: 210px;
+    height: 25%;
     padding:20px 92px 11px 92px;
-    .s1{
+    .description{
         font-size: 24px;
         margin-bottom: 24px;
     }
-    .s2{
+    .thesis-information{
         display: flex;
         flex-direction: row;
         font-size: 18px;
@@ -80,7 +80,7 @@
 }
 
 .section4 {
-    height: 135x;
+    height: 10%;
     background-color: #f8f8f8;
     padding:18px 92px 11px 92px;
     display: flex;
@@ -96,14 +96,13 @@
         margin:0px 0px 0px 40px;
     }
 }
-.button1{
+button{
     width: 234px; 
     height: 44px;
     border-radius: 30px;
     background-color: #2A6CCE;
     color: white;
     font-size: $fs-regular;
-    
 }
 
 app-readonly-field{
