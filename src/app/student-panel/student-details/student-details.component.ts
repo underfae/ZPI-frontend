@@ -20,13 +20,40 @@ export class StudentDetailsComponent implements OnInit {
     date: '17.03.2022r.',
     topic: 'Intraktywny elektroniczny dziennik zajęć',
     promoter: 'Jan Kowalski',
-    reviewer: 'Anna Smoła'
+    reviewer: 'Anna Smoła',
   };
-  subjectOpen:boolean=false;
+
+  subjectsData = [
+    {
+      name: 'Komputerowe przetwarzanie obrazu',
+      semester: 'I',
+    },
+    {
+      name: 'Modelowanie przestrzenne',
+      semester: 'I',
+    },
+    {
+      name: 'Komunikacja czlowiek - komputer',
+      semester: 'I',
+    },
+    {
+      name: 'Technologie audiowizualne',
+      semester: 'I',
+    },
+    {
+      name: 'Akwizycja i obróbka dźwięku',
+      semester: 'I',
+    },
+  ];
+
+  subjectOpen: boolean = false;
 
   constructor() {}
-  downloadSubjects(){
-    this.subjectOpen=true;
-  }
+
   ngOnInit(): void {}
+
+  downloadSubjects(): void {
+    this.subjectOpen = true;
+  }
+  
 }

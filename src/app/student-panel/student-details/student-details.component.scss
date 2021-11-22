@@ -3,113 +3,141 @@
 
 .wrapper {
   width: 100%;
-  height: calc(100% - 102px);
-}
-.section1 {
+  height: $section-w-o-header-height;
 
+  .section1 {
     height: 40%;
     display: flex;
     flex-direction: row;
-    padding: 0 62px;
-
+    padding: $line-margin;
     align-items: center;
     justify-content: space-between;
-    .student{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size: 36px;
-        font-weight: 400;
-        .name{
-            margin-left: 65px;
-        }
+    .student {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: $fs-xl;
+      font-weight: $fw-medium;
+      .name {
+        margin-left: $margin-xl;
+      }
     }
-}
-.section2 {
+  }
+
+  .section2 {
+    display: flex;
+    align-items: center;
+    padding: $section-padding;
+    background-color: $table-cell-color;
     height: 25%;
-    background-color: #f8f8f8;
-    padding:18px 92px 11px 92px;
-    .description{
-        font-size: 24px;
-        margin-bottom: 24px;
-    }
-    .student-information{
+    .student-data {
+      width: 100%;
+      .student-information {
         display: flex;
         flex-direction: row;
-        font-size: 18px;
+        font-size: $fs-regular;
         justify-content: space-between;
-
-        .column1{
-            display: flex;
-            flex-direction: column;
+        > div {
+          display: flex;
+          flex-direction: column;
         }
-        .column2{
-            display: flex;
-            flex-direction: column;
-        }
-        .column3{
-            display: flex;
-            flex-direction: column;
-        }
+      }
     }
-}
+  }
 
-.section3 {
+  .section3 {
+    display: flex;
+    align-items: center;
     height: 25%;
-    padding:20px 92px 11px 92px;
-    .description{
-        font-size: 24px;
-        margin-bottom: 24px;
-    }
-    .thesis-information{
+    padding: $section-padding;
+    .thesis-data {
+      width: 100%;
+      .thesis-information {
         display: flex;
         flex-direction: row;
-        font-size: 18px;
+        font-size: $fs-regular;
         justify-content: space-between;
-        padding-top: 20px;
-
-        .column1{
-            display: flex;
-            flex-direction: column;
+        > div {
+          display: flex;
+          flex-direction: column;
         }
-        .column2{
-            display: flex;
-            flex-direction: column;
-        }
+      }
     }
-}
+  }
 
-.section4 {
+  .section4 {
     height: 10%;
-    background-color: #f8f8f8;
-    padding:18px 92px 11px 92px;
+    background-color: $table-cell-color;
+    padding: $section-padding;
     display: flex;
     justify-content: center;
-    .download-subject{
-        font-size: 24px;
-        margin:12px 40px 0px 0px;
-        display: flex;
+    align-items: center;
+    font-size: $fs-medium;
+    display: flex;
+    span {
+      align-self: center;
+      margin-right: $margin-regular;
     }
-    .download-subject-btn{
-        display: flex;
-        flex-direction: row;
-        margin:0px 0px 0px 40px;
+  }
+
+  .subjects {
+    display: flex;
+    flex-direction: column;
+    background-color: $table-cell-color;
+    padding: $section-padding;
+    width: 100%;
+    .header {
+      color: $secondary-text-color;
+      font-size: $fs-medium;
+      font-weight: 400;
+      margin-bottom: $margin-regular;
     }
-}
-button{
-    width: 234px; 
-    height: 44px;
-    border-radius: 30px;
-    background-color: #2A6CCE;
-    color: white;
-    font-size: $fs-regular;
-}
+    .show-more {
+      text-decoration: underline;
+      font-size: $fs-regular;
+      text-align: center;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      align-self: center;
+    }
+    .subject {
+      height: auto;
+      display: flex;
+      justify-content: space-around;
+      font-size: $fs-regular;
+      align-items: center;
+      min-height: 60px;
+      color: $secondary-text-color;
+      font-weight: 400;
+      .subject-name {
+        width: 40%;
+      }
+      .semester {
+        width: 30%;
+      }
+    }
+  }
+  app-readonly-field {
+    margin-top: $margin-small;
+  }
 
-app-readonly-field{
-    margin-bottom: 14px;
-}
-
-img {
+  img {
     height: 200px;
     width: auto;
   }
+
+  button {
+    border-radius: $button-border-radius;
+    background-color: $basic-color;
+    color: white;
+    font-size: $fs-regular;
+    padding: 0 24px;
+    height: $header-button-height;
+  }
+
+  .description {
+    font-size: $fs-medium;
+    margin-bottom: $margin-small;
+  }
+}

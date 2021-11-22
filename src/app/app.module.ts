@@ -9,28 +9,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { ReadonlyFieldComponent } from './shared/components/readonly-field/readonly-field.component';
-import { StudentPanelComponent } from './student-panel/student-panel.component';
+import { StudentPanelModule } from './student-panel/student-panel.module';
 
-import { StudentDetailsComponent } from './student-panel/student-details/student-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     HeaderComponent,
     QuestionsComponent,
-    StudentPanelComponent,
-    ReadonlyFieldComponent,
-    StudentDetailsComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    StudentPanelModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
