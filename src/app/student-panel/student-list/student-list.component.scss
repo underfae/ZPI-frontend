@@ -1,5 +1,5 @@
-@import "../../assets/styles/colors.scss";
-@import "../../assets/styles/variables.scss";
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
 
 .hero-section {
   margin-top: 80px;
@@ -103,6 +103,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+
+  .student div {
+    min-width: 200px;
   }
 
   .student button {

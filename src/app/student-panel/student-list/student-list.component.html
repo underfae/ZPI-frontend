@@ -29,7 +29,7 @@
         <div><i class="fa fa-user icon"></i>{{student.name}}</div>
         <div>{{student.field}}</div>
         <div>{{student.university}}</div>
-        <button>Zobacz szczegóły</button>
+        <button (click)="showDetails(student.id)">Zobacz szczegóły</button>
     </div>
   </li>
 </ul>

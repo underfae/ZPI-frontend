@@ -30,4 +30,8 @@ export class StudentListComponent implements OnInit {
     this.showMore.nativeElement.innerHTML = "Zobacz mniej studentów";
     console.log(this.showMore.nativeElement.innerHTML);
   }
+
+  showDetails(studentId): void {
+    window.location.href = "http://localhost:4200/student-panel/" + studentId; //do zmiany!
+  }
 }
