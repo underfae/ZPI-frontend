@@ -12,6 +12,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { ReadonlyFieldComponent } from './shared/components/readonly-field/readonly-field.component';
 import { StudentPanelComponent } from './student-panel/student-panel.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { StudentPanelComponent } from './student-panel/student-panel.component';
     BrowserAnimationsModule,
     BrowserModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
