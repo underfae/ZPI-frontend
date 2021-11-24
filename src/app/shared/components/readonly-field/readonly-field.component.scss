@@ -1,9 +1,12 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
 .field {
-   display: flex;
-   color: #888888;
-   font-size: 18px;
-   font-weight: 500;
-   .name {
-     margin-right: 24px;
-    }
- }
+  display: flex;
+  color: #888888;
+  font-size: 18px;
+  font-weight: 500;
+  .name {
+    margin-right: $margin-regular;
+    min-width: 150px;
+  }
+}
