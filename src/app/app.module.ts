@@ -11,6 +11,8 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StudentPanelModule } from './student-panel/student-panel.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,7 @@ import { StudentPanelModule } from './student-panel/student-panel.module';
     BrowserModule,
     MatButtonModule,
     MatTableModule,
+    HttpClientModule,
     StudentPanelModule,
   ],
   providers: [],
