@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../../core/models/student.model';
+import { Subject } from '../../core/models/subject.model';
 
 @Component({
   selector: 'app-student-details',
@@ -6,45 +8,64 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student-details.component.scss'],
 })
 export class StudentDetailsComponent implements OnInit {
-  userData = {
+  subjectsData: Subject[] = [
+    {
+      id: '1',
+      name: 'Komputerowe przetwarzanie obrazu',
+      term: 'I',
+      questions: []
+    },
+    {
+      id: '2',
+      name: 'Modelowanie przestrzenne',
+      term: 'I',
+      questions: []
+    },
+    {
+      id: '3',
+      name: 'Komunikacja czlowiek - komputer',
+      term: 'I',
+      questions: []
+    },
+    {
+      id: '4',
+      name: 'Technologie audiowizualne',
+      term: 'I',
+      questions: []
+    },
+    {
+      id: '5',
+      name: 'Akwizycja i obróbka dźwięku',
+      term: 'I',
+      questions: []
+    }
+  ];
+
+  userData: Student = {
+    id: '1',
     name: 'Katarzyna Pycińska',
     specialization: 'Informatyka',
-    school: 'Politechnika Krakowska',
-    album_number: '126429',
-    adress: 'ul. Lea 334',
-    region: 'małopolskie',
-    city: 'Kraków',
-    birthdate: '05.06.1998',
+    study: 'Grafika Komputerowa',
+    sex: 'M',
+    albumNumber: '126429',
+    address: {
+      street: 'ul. Lea',
+      homeNumber: '334',
+      region: 'małopolskie',
+      city: 'Kraków',
+    },
+    birthdate: new Date(),
     pesel: '12345678921',
     birthplace: 'Kraków',
-    date: '17.03.2022r.',
+    thesis: {
     topic: 'Intraktywny elektroniczny dziennik zajęć',
     promoter: 'Jan Kowalski',
     reviewer: 'Anna Smoła',
+    },
+    subjects: this.subjectsData
   };
 
-  subjectsData = [
-    {
-      name: 'Komputerowe przetwarzanie obrazu',
-      semester: 'I',
-    },
-    {
-      name: 'Modelowanie przestrzenne',
-      semester: 'I',
-    },
-    {
-      name: 'Komunikacja czlowiek - komputer',
-      semester: 'I',
-    },
-    {
-      name: 'Technologie audiowizualne',
-      semester: 'I',
-    },
-    {
-      name: 'Akwizycja i obróbka dźwięku',
-      semester: 'I',
-    },
-  ];
+
 
   subjectOpen: boolean = false;
 
@@ -55,5 +76,5 @@ export class StudentDetailsComponent implements OnInit {
   downloadSubjects(): void {
     this.subjectOpen = true;
   }
-  
+
 }
