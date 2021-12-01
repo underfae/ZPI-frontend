@@ -27,9 +27,9 @@
       <li>
         <div class="student">
           <div class="name"><img src="../../../assets/images/avatar_2.svg">{{student.name}}</div>
-          <div>{{student.field}}</div>
-          <div>{{student.university}}</div>
-          <button (click)="showDetails(student)">Zobacz szczegóły</button>
+          <div>{{student.study}}</div>
+          <div>{{student.specialization}}</div>
+          <button (click)="showDetails(student.id)">Zobacz szczegóły</button>
         </div>
       </li>
     </ul>
@@ -37,4 +37,3 @@
       <p #showMore class="show-more" (click)="showMoreStudents()">Zobacz więcej studentów</p>
     </li>
   </div>
-</div>

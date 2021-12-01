@@ -30,11 +30,13 @@ export class StudentListComponent implements OnInit {
   }
 
   showMoreStudents(): void {
-    this.limitList =
-      this.showMore.nativeElement.innerHTML == 'Zobacz więcej studentów'
-        ? 6
-        : 13;
-    this.showMore.nativeElement.innerHTML = 'Zobacz mniej studentów';
+    if(this.showMore.nativeElement.innerHTML == "Zobacz więcej studentów"){
+      this.limitList += 7;
+      this.showMore.nativeElement.innerHTML = "Zobacz mniej studentów"
+    } else {
+      this.limitList = 6;
+      this.showMore.nativeElement.innerHTML = "Zobacz więcej studentów";
+    }
   }
 
   showDetails(student: Student): void {
