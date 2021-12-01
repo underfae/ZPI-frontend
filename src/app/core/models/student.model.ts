@@ -5,10 +5,10 @@ export class Student {
   name: string;
   study: string;
   specialization: string;
-  albumNumber: string;
+  albumnumber: string;
   address: {
     street: string;
-    homeNumber: string;
+    houseNumber: string;
     region: string;
     city: string;
   };
