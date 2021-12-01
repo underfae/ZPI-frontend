@@ -5,12 +5,20 @@ $line-margin: 0 62px;
 $section-w-o-header-height: calc(100% - 102px);
 $button-border-radius: 30px;
 $section-padding: 18px 92px;
+$list-button-padding: 8px 20px;
+$list-li-padding: 8px 70px;
+$paragraph-padding: 10px 72px;
+
 // ---------------- MARGINS ------------
+$margin-xs: 8px;
 $margin-small: 14px;
 $margin-regular: 24px;
+$margin-medium: 32px;
+$margin-large: 48px;
 $margin-xl: 65px;
 
 //----------------FONT SIZE -----------
+$fs-small: 14px;
 $fs-regular: 18px;
 $fs-medium: 24px;
 $fs-large: 48px;

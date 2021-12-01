@@ -11,35 +11,4 @@
         </div>
     </div>
     <hr>
-    <div class="table-header"> Najbliższe obrony</div>
-
-    <mat-table [dataSource]="dataSource" class="">
-      <ng-container matColumnDef="student">
-        <mat-header-cell *matHeaderCellDef> Student </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.student}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="promoter">
-        <mat-header-cell *matHeaderCellDef> Promotor </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.promoter}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="reviewer">
-        <mat-header-cell *matHeaderCellDef> Recenzent </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.reviewer}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="topic">
-        <mat-header-cell *matHeaderCellDef> Temat </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.topic}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
 </div>

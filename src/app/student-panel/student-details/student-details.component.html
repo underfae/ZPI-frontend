@@ -15,17 +15,17 @@
       </div>
       <div class="student-information">
         <div class="column1">
-          <app-readonly-field name="Kierunek" value="{{userData.specialization}}"></app-readonly-field>
-          <app-readonly-field name="Uczelnia" value="{{userData.school}}"></app-readonly-field>
-          <app-readonly-field name="Nr albumu" value="{{userData.album_number}}"></app-readonly-field>
+          <app-readonly-field name="Kierunek" value="{{userData.study}}"></app-readonly-field>
+          <app-readonly-field name="Specjalizacja" value="{{userData.specialization}}"></app-readonly-field>
+          <app-readonly-field name="Nr albumu" value="{{userData.albumNumber}}"></app-readonly-field>
         </div>
         <div class="column2">
-          <app-readonly-field name="Adres" value="{{userData.adress}}"></app-readonly-field>
-          <app-readonly-field name="Województwo" value="{{userData.region}}"></app-readonly-field>
-          <app-readonly-field name="Miasto" value="{{userData.city}}"></app-readonly-field>
+          <app-readonly-field name="Adres" value="{{userData.address.street}} {{userData.address.homeNumber}}"></app-readonly-field>
+          <app-readonly-field name="Województwo" value="{{userData.address.region}}"></app-readonly-field>
+          <app-readonly-field name="Miasto" value="{{userData.address.city}}"></app-readonly-field>
         </div>
         <div class="column3">
-          <app-readonly-field name="Data urodzenia" value="{{userData.birthdate}}"></app-readonly-field>
+          <app-readonly-field name="Data urodzenia" value="{{userData.birthdate | date}}"></app-readonly-field>
           <app-readonly-field name="Pesel" value="{{userData.pesel}}"></app-readonly-field>
           <app-readonly-field name="Miejsce urodzenia" value="{{userData.birthplace}}"></app-readonly-field>
         </div>
@@ -39,15 +39,13 @@
       </div>
       <div class="thesis-information">
         <div class="column1">
-          <app-readonly-field name="Promotor" value="{{userData.promoter}}"></app-readonly-field>
-          <app-readonly-field name="Data obrony" value="{{userData.date}}"></app-readonly-field>
+          <app-readonly-field name="Promotor" value="{{userData.thesis.promoter}}"></app-readonly-field>
         </div>
         <div class="column2">
-          <app-readonly-field name="Recenzent" value="{{userData.reviewer}}"></app-readonly-field>
-          <app-readonly-field name="Temat" value="{{userData.topic}}"></app-readonly-field>
+          <app-readonly-field name="Recenzent" value="{{userData.thesis.reviewer}}"></app-readonly-field>
         </div>
         <div class="column3">
-
+          <app-readonly-field name="Temat" value="{{userData.thesis.topic}}"></app-readonly-field>
         </div>
       </div>
     </div>

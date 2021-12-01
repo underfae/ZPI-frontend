@@ -1,127 +1,152 @@
 @import "../../../assets/styles/colors.scss";
 @import "../../../assets/styles/variables.scss";
 
-.hero-section {
-  margin-top: 80px;
-  display: flex;
+.wrapper {
   width: 100%;
-}
-
-.image-section {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-    .hero-image {
-      max-width: 258px;
-    }
-}
-
-.search-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-
-   span {
-        font-weight: $fw-medium !important; // dlaczego nie wchodzi bez importanta??
-        font-size: $fs-medium;
-        margin-bottom: 50px;
-      }
-
-  .form {
+  height: $section-w-o-header-height;
+  .search {
     display: flex;
-    border: 1px solid grey;
-    width: max-content;
-
-      input, button {
-        border: none;
-        padding: 20px;
-        caret-color: #D3D3D3;
-      }
-
-      input:focus {
-        outline: none;
-      }
-
-      .input-container input::-webkit-input-placeholder {
-        text-align: right;
-        border-right: 1px solid #D3D3D3;
-        color: #D3D3D3;
-        padding: 10px;
-        font-size: $fs-regular;
-      }
-
-      .button-container button {
-        padding: 10px;
-        font-size: $fs-regular;
-      }
-
-      .input-container i,
-      .button-container i {
-        padding: 20px;
-      }
-
-      button {
-        background-color: #fff;
-      }
-  }
-
-}
-
-.students-list {
-  .paragraph {
-    background-color: #F8F8F8;
-    padding: 40px 0 15px 40px;
-    font-weight: $fw-medium !important; //why
-    font-size: $fs-regular;
-    color:  #727272;
-    margin-top: 40px;
-    margin-bottom: 5px;
-  }
-
-  ul {
-    padding: 0;
-    margin: 5px 0;
-  }
-
-  li {
-      list-style: none;
-      background-color: #F8F8F8;
-      width: 100%;
-      padding: 10px 70px;
-  }
-
-  .student i {
-    margin-right: 30px;
-  }
-
-  .student {
-    display: flex;
-    justify-content: space-around;
+    height: 45%;
     align-items: center;
+    padding: $section-padding;
+    .image-section {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .image {
+        max-width: 258px;
+      }
+    }
+
+    .search-section {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      span {
+        font-weight: $fw-medium !important;
+        font-size: $fs-medium;
+        margin-bottom: $margin-large;
+      }
+
+      .form {
+        display: flex;
+        border: 1px solid $basic-color;
+        border-radius: $button-border-radius;
+        width: 90%;
+        padding: 0 24px;
+
+        .input-container {
+          width: 40%;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+          input {
+            width: 100%;
+            margin-top: $margin-xs;
+            font-size: $fs-regular;
+          }
+        }
+        i {
+          margin-right: $margin-xs;
+        }
+        .button-container {
+          width: 20%;
+          text-align: end;
+          display: flex;
+          padding: 0 10px;
+          button {
+            width: 100%;
+            margin-top: $margin-xs;
+          }
+        }
+
+        input,
+        button {
+          border: none;
+          padding: 15px 0;
+          caret-color: $searchbar-color;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        .input-container input::-webkit-input-placeholder {
+          text-align: left;
+          border-right: 1px solid $searchbar-color;
+          color: $searchbar-color;
+          padding: 10px;
+          font-size: $fs-regular;
+        }
+
+        .button-container button {
+          font-size: $fs-regular;
+        }
+
+        button {
+          background-color: white;
+        }
+      }
+    }
   }
 
-  .student div {
-    min-width: 200px;
-  }
+  .students-list {
+    height: 55%;
+    p {
+      background-color: $table-cell-color;
+      font-weight: $fw-medium !important;
+      font-size: $fs-regular;
+      color: $quote-color;
+      margin-bottom: $margin-xs;
+      padding: $paragraph-padding;
+    }
 
-  .student button {
-    border: 0;
-    background-color: $basic-color;
-    color: $table-cell-color;
-    padding: 8px 20px;
-    border-radius: 30px;
-  }
+    ul {
+      padding: 0;
+      margin: $margin-xs 0;
+    }
 
-  .show-more {
-    text-align: center;
-    margin: 0;
-    text-decoration: underline;
-    cursor: pointer;
+    li {
+      list-style: none;
+      background-color: $table-cell-color;
+      width: 100%;
+      padding: $list-li-padding;
+    }
+
+    .student img {
+      margin-right: margin-medium;
+      width: 25px;
+    }
+
+    .student {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .name {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .student div {
+      min-width: 200px;
+    }
+
+    .student button {
+      border: 0;
+      background-color: $basic-color;
+      color: $table-cell-color;
+      padding: $list-button-padding;
+      border-radius: $button-border-radius;
+      font-size: $fs-small;
+    }
+
+    .show-more {
+      text-align: center;
+      margin: 0;
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
-
