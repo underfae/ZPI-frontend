@@ -43,32 +43,9 @@
     }
   }
 
-  mat-table {
-    width: 100%;
-    margin: auto;
-    mat-header-cell {
-      background-color: $basic-color;
-      color: white;
-      font-size: $fs-regular;
-    }
-
-    mat-cell {
-      background-color: $table-cell-color;
-      color: $basic-color;
-      height: 45px;
-    }
-  }
-
   hr {
     margin: 0;
     height: 1px;
     background-color: $basic-color;
-  }
-
-  .table-header {
-    padding: 25px 0;
-    color: $secondary-text-color;
-    font-size: $fs-regular;
-    font-weight: $fw-medium !important;
   }
 }

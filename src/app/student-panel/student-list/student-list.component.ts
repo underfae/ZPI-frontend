@@ -28,7 +28,6 @@ export class StudentListComponent implements OnInit {
   showMoreStudents(): void {
     this.limitList = (this.showMore.nativeElement.innerHTML == "Zobacz więcej studentów" ? 6 : 13);
     this.showMore.nativeElement.innerHTML = "Zobacz mniej studentów";
-    console.log(this.showMore.nativeElement.innerHTML);
   }
 
   showDetails(studentId): void {

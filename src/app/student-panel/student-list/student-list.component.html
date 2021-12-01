@@ -1,37 +1,40 @@
-<div class="hero-section">
-  <div class="image-section">
-      <img class="hero-image" src="../../assets/images/graphic-search.svg" alt="">
-  </div>
-  <div class="search-section">
-      <span>Wyszukaj studenta</span>
+<div class="wrapper">
+  <div class="search">
+    <div class="image-section">
+      <img class="image" src="../../assets/images/search.png" alt="">
+    </div>
+    <div class="search-section">
+      <span> Wyszukaj studenta </span>
       <div class="form">
         <div class="input-container">
-           <i class="fas fa-user"></i>
-           <input class="name-input" id="name" type="text" placeholder="Imię i nazwisko">
+          <i class="fas fa-user"></i>
+          <input class="name-input" id="name" type="text" placeholder="Imię i nazwisko">
         </div>
         <div class="input-container">
-          <i class="fa fa-user icon"></i>
-          <input class="localization-input" id="localization" type="text" placeholder="Uczelnia">
+          <i class="fa fa-user"></i>
+          <input class="localization-input" id="localization" type="text" placeholder="Kierunek">
         </div>
         <div class="button-container">
-          <button>Szukaj</button>
-          <i class="fa fa-user icon"></i>
+          <button>Szukaj<i class="fas fa-search"></i></button>
         </div>
       </div>
-  </div>
-</div>
-
-<div class="students-list">
-<p class="paragraph">Lista studentów</p>
-<ul *ngFor="let student of students | slice:0:limitList">
-  <li>
-    <div class="student">
-        <div><i class="fa fa-user icon"></i>{{student.name}}</div>
-        <div>{{student.field}}</div>
-        <div>{{student.university}}</div>
-        <button (click)="showDetails(student.id)">Zobacz szczegóły</button>
     </div>
-  </li>
-</ul>
-<li><p #showMore class="show-more" (click)="showMoreStudents()">Zobacz więcej studentów</p></li>
+  </div>
+
+  <div class="students-list">
+    <p>Lista studentów</p>
+    <ul *ngFor="let student of students | slice:0:limitList">
+      <li>
+        <div class="student">
+          <div class="name"><img src="../../../assets/images/avatar_2.svg">{{student.name}}</div>
+          <div>{{student.field}}</div>
+          <div>{{student.university}}</div>
+          <button (click)="showDetails(student.id)">Zobacz szczegóły</button>
+        </div>
+      </li>
+    </ul>
+    <li>
+      <p #showMore class="show-more" (click)="showMoreStudents()">Zobacz więcej studentów</p>
+    </li>
+  </div>
 </div>
