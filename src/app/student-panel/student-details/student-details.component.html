@@ -1,14 +1,8 @@
 <div class='wrapper'>
   <div class="section1">
-    <div class="student">
-      <img src="../../assets/images/avatar.png">
-      <div class="name">
-        {{student?.name}}
-      </div>
-    </div>
-    <img src="../../assets/images/graduation.png">
+    <app-student-preview name="{{student?.name}}" sex="male"></app-student-preview>
   </div>
-  <div class="section2">
+  <div class="section2" *ngIf="!examMode">
     <div class="student-data">
       <div class="description">
         Dane Studenta
@@ -32,29 +26,12 @@
       </div>
     </div>
   </div>
-  <div class="section3">
-    <div class="thesis-data">
-      <div class="description">
-        Dane pracy dyplomowej
-      </div>
-      <div class="thesis-information">
-        <div class="column1">
-          <app-readonly-field name="Promotor" value="{{student?.thesis.promoter}}"></app-readonly-field>
-        </div>
-        <div class="column2">
-          <app-readonly-field name="Recenzent" value="{{student?.thesis.reviewer}}"></app-readonly-field>
-        </div>
-        <div class="column3">
-          <app-readonly-field name="Temat" value="{{student?.thesis.topic}}"></app-readonly-field>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section4" *ngIf='!subjectOpen'>
+
+  <div class="section3" *ngIf='!examMode && !subjectOpen'>
     <span>Pobierz przedmioty studenta!</span>
     <button mat-raised-button color='primary' (click)='downloadSubjects()'>Pobierz przedmioty</button>
   </div>
-  <ng-container *ngIf='subjectOpen'>
+  <ng-container *ngIf='!examMode && subjectOpen'>
     <div class="subjects">
       <div class="header"> Przedmioty studenta</div>
       <div class="subject" *ngFor="let element of subjectsData">
@@ -63,6 +40,32 @@
         <button mat-raised-button color='primary'>Zobacz pytania</button>
       </div>
       <div class="show-more">Zobacz więcej przedmiotów</div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf='!examMode'>
+    <div class="questions">
+   <div class="action">
+      <p>Wylosuj pytania dla studenta!</p>
+      <button mat-raised-button color='primary' (click)="startExam()">Wylosuj pytania</button>
+   </div>
+   <div class="images">
+     <img src="../../../assets/images/questions.svg">
+   </div>
+  </div>
+  </ng-container>
+
+  <ng-container *ngIf='examMode'>
+    <div class="choosen-question">
+      <p>Wylosowane pytania</p>
+      <div class="cards">
+      <ng-container *ngFor="let question of questions">
+        <div class="question-card">
+        {{question.name}}
+        </div>
+      </ng-container>
+      </div>
+      <a>Zmień pytania</a>
     </div>
   </ng-container>
 </div>

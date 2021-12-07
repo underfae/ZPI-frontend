@@ -1,0 +1,27 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
+.section1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: $student-preview-padding;
+    width: 100%;
+    .student {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: $fs-xl;
+        font-weight: $fw-medium;
+        .name {
+            margin-left: $margin-xl;
+        }
+        img {
+            margin-left: $line-margin;
+            width: $avatar-width;
+        }
+    }
+    .graduation-pic {
+        height: 250px;
+    }
+}

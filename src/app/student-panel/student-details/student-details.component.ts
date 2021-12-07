@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Student } from '../../core/models/student.model';
 import { Subject } from '../../core/models/subject.model';
+import { Question } from '../../core/models/question.model';
 
 @Component({
   selector: 'app-student-details',
@@ -43,8 +44,27 @@ export class StudentDetailsComponent implements OnInit {
     },
   ];
 
+  questions: Question[] = [
+    {
+      id: '1',
+      name: 'Co to jest macierz sztywności?',
+      answer: "answer"
+    },
+    {
+      id: '2',
+      name: 'Przedstawić metody pozyskiwania danych o użytkownikach',
+      answer: "answer"
+    },
+    {
+      id: '3',
+      name: 'Kompresja obrazu - omówić przykład kompresji stratnej i bezstratnej',
+      answer: "answer"
+    },
+  ];
+
   subjectOpen: boolean = false;
   student: Student;
+  examMode: boolean = false;
 
   constructor(protected router: Router, protected route: ActivatedRoute) {
     if (this.router.getCurrentNavigation() !== null) {
@@ -60,5 +80,9 @@ export class StudentDetailsComponent implements OnInit {
 
   downloadSubjects(): void {
     this.subjectOpen = true;
+  }
+
+  startExam(): void {
+    this.examMode = true;
   }
 }
