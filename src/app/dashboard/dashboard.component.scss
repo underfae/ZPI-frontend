@@ -63,7 +63,7 @@
       width: auto;
     }
     .information {
-      width: 40%;
+      width: 60%;
       flex-direction: column;
       text-align: left;
       align-self: center;
@@ -75,11 +75,15 @@
       color: $secondary-text-color;
       margin-bottom: $margin-regular;
       margin-left: $margin-regular;
+      
     }
     .arrow1 {
-      height: 100px;
+      height: 80px;
       width: auto;
       margin-left: 120px;
+    }
+    .education {
+     margin-right: 217px;
     }
       button {
     border-radius: $button-border-radius;
