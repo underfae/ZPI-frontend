@@ -1,1 +1,23 @@
-<p>questions works!</p>
+<div class="wrapper">
+  <div class="header"> Przedmioty </div>
+  <div class="table">
+    <table>
+      <tr *ngFor="let el of elements">
+        <td>{{el.name}}</td>
+        <td>{{el.study}}</td>
+        <td>{{el.specialization}}</td>
+        <button mat-raised-button (click)="el.expanded = !el.expanded"> Zobacz pytania</button>
+        <ng-container *ngIf="el.expanded">
+          <div class="question-wrapper">
+            <div *ngFor="let question of el.questions" class="question">
+              &bull; {{ question }}
+            </div>
+          </div>
+        </ng-container>
+      </tr>
+    </table>
+  </div>
+  <div class="show-more" (click)="showMore()">
+    Pokaż więcej
+  </div>
+</div>
