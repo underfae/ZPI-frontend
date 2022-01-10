@@ -1,23 +1,70 @@
 <div class="wrapper">
-  <div class="header"> Przedmioty </div>
+  <div class="header">
+    <div> Przedmioty </div>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Wyszukaj przedmiot" #input>
+  </div>
   <div class="table">
-    <table>
-      <tr *ngFor="let el of elements">
-        <td>{{el.name}}</td>
-        <td>{{el.study}}</td>
-        <td>{{el.specialization}}</td>
-        <button mat-raised-button (click)="el.expanded = !el.expanded"> Zobacz pytania</button>
-        <ng-container *ngIf="el.expanded">
-          <div class="question-wrapper">
-            <div *ngFor="let question of el.questions" class="question">
-              &bull; {{ question }}
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> {{element.subject}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="study">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> {{element.study}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="specialization">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"> {{element.specialization}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="options">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="addQuestion(element.id)">
+            <i class="far fa-plus-square"></i>
+          </button>
+          <button mat-icon-button (click)="deleteQuestion(element.id)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+          <button mat-icon-button (click)="expandedElement = expandedElement === element ? null : element">
+            <i class="far fa-arrow-alt-circle-down"></i>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+          <div class="example-element-detail" [@detailExpand]="element === expandedElement ? 'expanded' : 'collapsed'">
+            <div class="example-element-description">
+              <div *ngFor="let question of element.questions" class="question-wrapper">
+                <div class="question"> &bull; {{ question.name }} </div>
+                <div class="icons">
+                  <button mat-icon-button (click)="editQuestion(question.id)">
+                    <i class="far fa-edit"></i>
+                  </button>
+                  <button mat-icon-button (click)="deleteQuestion(question.id)">
+                    <i class="far fa-trash-alt"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </ng-container>
+        </td>
+      </ng-container>
+
+      <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell no-results" colspan="4">
+          <img src="../../assets/images/no-result.svg">
+          <div class="info">Brak wyników dla frazy "{{input.value}}"</div>
+        </td>
       </tr>
     </table>
-  </div>
-  <div class="show-more" (click)="showMore()">
-    Pokaż więcej
   </div>
 </div>

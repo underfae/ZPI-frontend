@@ -11,7 +11,7 @@ import { Question } from '../../core/models/question.model';
   styleUrls: ['./student-details.component.scss'],
 })
 export class StudentDetailsComponent implements OnInit {
-  subjectsData: Subject[] = [
+  subjectsData: Partial<Subject>[] = [
     {
       id: '1',
       name: 'Komputerowe przetwarzanie obrazu',

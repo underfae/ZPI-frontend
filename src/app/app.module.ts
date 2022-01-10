@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,13 +26,15 @@ import { StudentPanelModule } from './student-panel/student-panel.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    MatButtonModule,
-    MatTableModule,
     HttpClientModule,
-    StudentPanelModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
     SharedModule,
+    StudentPanelModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
