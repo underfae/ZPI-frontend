@@ -22,4 +22,5 @@ export class AddQuestionDialogComponent {
 export interface QuestionData {
   question: string;
   answer: string;
+  submitButton: string;
 }

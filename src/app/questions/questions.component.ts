@@ -183,9 +183,6 @@ export class QuestionsComponent {
     'options',
   ];
 
-  question: '';
-  answer: '';
-
   dataSource = new MatTableDataSource<Partial<Subject>>(this.elements);
   expandedElement: Subject | null;
 
@@ -194,13 +191,14 @@ export class QuestionsComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteQuestion(subjectId: string): void {}
+  deleteQuestion(subjectId: string): void {
+  }
 
   editQuestion(subjectId: string, answer: string, question: string): void {
     console.log(answer, question);
     const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
       width: '500px',
-      data: { question: question, answer: answer },
+      data: { question: question, answer: answer, submitButton: 'Edytuj' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -213,7 +211,7 @@ export class QuestionsComponent {
 
     const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
       width: '500px',
-      data: { question: this.question, answer: this.answer },
+      data: { question: '', answer: '', submitButton: 'Utwórz' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

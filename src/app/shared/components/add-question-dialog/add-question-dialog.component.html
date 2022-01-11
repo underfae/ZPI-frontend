@@ -2,7 +2,7 @@
   <div class="text">
     Dodaj pytanie
   </div>
-  <mat-form-field >
+  <mat-form-field>
     <mat-label>Pytanie</mat-label>
     <textarea matInput [(ngModel)]="data.question"></textarea>
   </mat-form-field>
@@ -13,5 +13,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Anuluj</button>
-  <button mat-button [mat-dialog-close]="{ question: data.question, answer: data.answer}">Utwórz</button>
+  <button mat-button [mat-dialog-close]="{ question: data.question, answer: data.answer}"> {{ data.submitButton }}</button>
 </div>
