@@ -1,0 +1,10 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
+button {
+  border-radius: $button-border-radius;
+  background-color: $basic-color;
+  color: white;
+  font-size: $fs-regular;
+  padding: 0 24px;
+  height: $header-button-height;
+}

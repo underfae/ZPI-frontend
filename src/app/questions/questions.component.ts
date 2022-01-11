@@ -6,8 +6,11 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from '../core/models/subject.model';
+import { AddQuestionDialogComponent } from '../shared/components/add-question-dialog/add-question-dialog.component';
 export interface SearchResponse {
   document: string;
   timestamp: number;
@@ -28,6 +31,8 @@ export interface SearchResponse {
   ],
 })
 export class QuestionsComponent {
+
+  constructor(protected dialog: MatDialog){}
   elements: Partial<Subject>[] = [
     {
       id: '1',
@@ -178,9 +183,12 @@ export class QuestionsComponent {
     'options',
   ];
 
+  question: '';
+  answer: '';
+
   dataSource = new MatTableDataSource<Partial<Subject>>(this.elements);
   expandedElement: Subject | null;
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -188,9 +196,20 @@ export class QuestionsComponent {
 
   deleteQuestion(subjectId: string): void {}
 
-  showMore(): void {}
-
   editQuestion(subjectId: string): void {}
 
-  addQuestion(subjectId: string): void {}
+  addQuestion(subjectId: string): void {
+
+    const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+      width: '500px',
+      data: { question: this.question, answer: this.answer },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result)
+    });
+
+    
+  }
 }
