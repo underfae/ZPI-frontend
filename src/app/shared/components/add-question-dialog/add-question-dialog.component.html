@@ -1,8 +1,10 @@
 <div mat-dialog-content>
-  <p>Dodaj pytanie</p>
+  <div class="text">
+    Dodaj pytanie
+  </div>
   <mat-form-field >
     <mat-label>Pytanie</mat-label>
-    <input matInput [(ngModel)]="data.question">
+    <textarea matInput [(ngModel)]="data.question"></textarea>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Odpowiedź</mat-label>

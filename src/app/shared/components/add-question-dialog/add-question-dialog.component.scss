@@ -7,4 +7,12 @@ button {
   font-size: $fs-regular;
   padding: 0 24px;
   height: $header-button-height;
+  margin-left: 17%;
+}
+mat-form-field{
+width: 100%;
+}
+.text {
+  font-size: $fs-medium;
+  padding-bottom: 16px;
 }
