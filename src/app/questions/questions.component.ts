@@ -43,7 +43,7 @@ export class QuestionsComponent {
         {
           id: '1',
           name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
+          answer: 'asdfsdfsad',
         },
         {
           id: '2',
@@ -196,7 +196,18 @@ export class QuestionsComponent {
 
   deleteQuestion(subjectId: string): void {}
 
-  editQuestion(subjectId: string): void {}
+  editQuestion(subjectId: string, answer: string, question: string): void {
+    console.log(answer, question);
+    const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+      width: '500px',
+      data: { question: question, answer: answer },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result)
+    });
+  }
 
   addQuestion(subjectId: string): void {
 
@@ -210,6 +221,6 @@ export class QuestionsComponent {
       console.log(result)
     });
 
-    
+
   }
 }

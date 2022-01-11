@@ -13,5 +13,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Anuluj</button>
-  <button [mat-dialog-close]="{ question: data.question, answer: data.answer}" cdkFocusInitial>Utwórz</button>
+  <button mat-button [mat-dialog-close]="{ question: data.question, answer: data.answer}">Utwórz</button>
 </div>
