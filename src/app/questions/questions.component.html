@@ -42,7 +42,7 @@
               <div *ngFor="let question of element.questions" class="question-wrapper">
                 <div class="question"> &bull; {{ question.name }} </div>
                 <div class="icons">
-                  <button mat-icon-button (click)="editQuestion(question.id)">
+                  <button mat-icon-button (click)="editQuestion(question.id, question.answer, question.name)">
                     <i class="far fa-edit"></i>
                   </button>
                   <button mat-icon-button (click)="deleteQuestion(question.id)">

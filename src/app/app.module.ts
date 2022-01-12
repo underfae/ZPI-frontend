@@ -6,6 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +31,7 @@ import { StudentPanelModule } from './student-panel/student-panel.module';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     MatTableModule,
     SharedModule,
     StudentPanelModule,

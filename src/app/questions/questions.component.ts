@@ -6,8 +6,11 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from '../core/models/subject.model';
+import { AddQuestionDialogComponent } from '../shared/components/add-question-dialog/add-question-dialog.component';
 export interface SearchResponse {
   document: string;
   timestamp: number;
@@ -28,6 +31,8 @@ export interface SearchResponse {
   ],
 })
 export class QuestionsComponent {
+
+  constructor(protected dialog: MatDialog){}
   elements: Partial<Subject>[] = [
     {
       id: '1',
@@ -38,7 +43,7 @@ export class QuestionsComponent {
         {
           id: '1',
           name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
+          answer: 'asdfsdfsad',
         },
         {
           id: '2',
@@ -180,17 +185,40 @@ export class QuestionsComponent {
 
   dataSource = new MatTableDataSource<Partial<Subject>>(this.elements);
   expandedElement: Subject | null;
-  
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteQuestion(subjectId: string): void {}
+  deleteQuestion(subjectId: string): void {
+  }
 
-  showMore(): void {}
+  editQuestion(subjectId: string, answer: string, question: string): void {
+    console.log(answer, question);
+    const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+      width: '500px',
+      data: { question: question, answer: answer, submitButton: 'Edytuj' },
+    });
 
-  editQuestion(subjectId: string): void {}
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result)
+    });
+  }
 
-  addQuestion(subjectId: string): void {}
+  addQuestion(subjectId: string): void {
+
+    const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
+      width: '500px',
+      data: { question: '', answer: '', submitButton: 'Utwórz' },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result)
+    });
+
+
+  }
 }
