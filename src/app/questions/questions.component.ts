@@ -5,11 +5,15 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component, ViewChild } from '@angular/core';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Question } from '../core/models/question.model';
 import { Subject } from '../core/models/subject.model';
+import { QuestionService } from '../core/services/question.service';
+import { SubjectService } from '../core/services/subject.service';
 import { AddQuestionDialogComponent } from '../shared/components/add-question-dialog/add-question-dialog.component';
 export interface SearchResponse {
   document: string;
@@ -30,160 +34,28 @@ export interface SearchResponse {
     ]),
   ],
 })
-export class QuestionsComponent {
+export class QuestionsComponent implements OnInit {
+  constructor(
+    protected dialog: MatDialog,
+    protected subjectService: SubjectService,
+    protected questionService: QuestionService
+  ) {}
 
-  constructor(protected dialog: MatDialog){}
-  elements: Partial<Subject>[] = [
-    {
-      id: '1',
-      subject: 'Komputerowe przetwarzanie obrazu',
-      study: 'Informatyka',
-      specialization: 'Grafika komputerowa i Multimedia',
-      questions: [
-        {
-          id: '1',
-          name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: 'asdfsdfsad',
-        },
-        {
-          id: '2',
-          name: 'Helmholtza teoria percepcji wysokości oraz wrażenia konsonansu i dysonansu.',
-          answer: '',
-        },
-        {
-          id: '3',
-          name: 'Pochodzenie i rodzaje skal muzycznych. Strój „naturalny” i równomiernie temperowany.',
-          answer: '',
-        },
-        {
-          id: '4',
-          name: 'Formy muzyki europejskiej i ich związek z fizycznymi własnościami dźwięku: organum, polifonia imitacyjna (fuga, a interwał kwinty), forma okresowa, allegro sonatowe.',
-          answer: '',
-        },
-      ],
-    },
-    {
-      id: '1',
-      subject: 'Komputerowe przetwarzanie obrazu',
-      study: 'Informatyka',
-      specialization: 'Grafika komputerowa i Multimedia',
-      questions: [
-        {
-          id: '1',
-          name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
-        },
-        {
-          id: '2',
-          name: 'Helmholtza teoria percepcji wysokości oraz wrażenia konsonansu i dysonansu.',
-          answer: '',
-        },
-        {
-          id: '3',
-          name: 'Pochodzenie i rodzaje skal muzycznych. Strój „naturalny” i równomiernie temperowany.',
-          answer: '',
-        },
-        {
-          id: '4',
-          name: 'Formy muzyki europejskiej i ich związek z fizycznymi własnościami dźwięku: organum, polifonia imitacyjna (fuga, a interwał kwinty), forma okresowa, allegro sonatowe.',
-          answer: '',
-        },
-      ],
-    },
-    {
-      id: '1',
-      subject: 'Komputerowe przetwarzanie obrazu',
-      study: 'Informatyka',
-      specialization: 'Grafika komputerowa i Multimedia',
-      questions: [
-        {
-          id: '1',
-          name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
-        },
-        {
-          id: '2',
-          name: 'Helmholtza teoria percepcji wysokości oraz wrażenia konsonansu i dysonansu.',
-          answer: '',
-        },
-        {
-          id: '3',
-          name: 'Pochodzenie i rodzaje skal muzycznych. Strój „naturalny” i równomiernie temperowany.',
-          answer: '',
-        },
-        {
-          id: '4',
-          name: 'Formy muzyki europejskiej i ich związek z fizycznymi własnościami dźwięku: organum, polifonia imitacyjna (fuga, a interwał kwinty), forma okresowa, allegro sonatowe.',
-          answer: '',
-        },
-      ],
-    },
-    {
-      id: '1',
-      subject: 'lalal',
-      study: 'biologia',
-      specialization: 'Grafika komputerowa i Multimedia',
-      questions: [
-        {
-          id: '1',
-          name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
-        },
-        {
-          id: '2',
-          name: 'Helmholtza teoria percepcji wysokości oraz wrażenia konsonansu i dysonansu.',
-          answer: '',
-        },
-        {
-          id: '3',
-          name: 'Pochodzenie i rodzaje skal muzycznych. Strój „naturalny” i równomiernie temperowany.',
-          answer: '',
-        },
-        {
-          id: '4',
-          name: 'Formy muzyki europejskiej i ich związek z fizycznymi własnościami dźwięku: organum, polifonia imitacyjna (fuga, a interwał kwinty), forma okresowa, allegro sonatowe.',
-          answer: '',
-        },
-      ],
-    },
-    {
-      id: '1',
-      subject: 'Komputerowe przetwarzanie obrazu',
-      study: 'Informatyka',
-      specialization: 'Grafika komputerowa i Multimedia',
-      questions: [
-        {
-          id: '1',
-          name: 'Cechy dźwięku: wysokość, barwa, głośność ( także inne: „twardość”, „jasność” „klarowność” itp.) oraz ich związek z parametrami fizycznymi.',
-          answer: '',
-        },
-        {
-          id: '2',
-          name: 'Helmholtza teoria percepcji wysokości oraz wrażenia konsonansu i dysonansu.',
-          answer: '',
-        },
-        {
-          id: '3',
-          name: 'Pochodzenie i rodzaje skal muzycznych. Strój „naturalny” i równomiernie temperowany.',
-          answer: '',
-        },
-        {
-          id: '4',
-          name: 'Formy muzyki europejskiej i ich związek z fizycznymi własnościami dźwięku: organum, polifonia imitacyjna (fuga, a interwał kwinty), forma okresowa, allegro sonatowe.',
-          answer: '',
-        },
-      ],
-    },
-  ];
-
+  elements: Subject[] = [];
+  dataSource;
   displayedColumns: string[] = [
-    'subject',
-    'study',
-    'specialization',
+    'name',
+    // 'study',
+    // 'specialization',
     'options',
   ];
 
-  dataSource = new MatTableDataSource<Partial<Subject>>(this.elements);
+  ngOnInit(): void {
+    this.subjectService.getSubjects().subscribe((subjects) => {
+      this.dataSource = new MatTableDataSource<Subject>(subjects);
+    });
+  }
+
   expandedElement: Subject | null;
 
   applyFilter(event: Event) {
@@ -191,11 +63,17 @@ export class QuestionsComponent {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  deleteQuestion(subjectId: string): void {
+  deleteQuestion(question: Question): void {
+    this.questionService.deleteQuestion(question.id).subscribe(
+      () => {
+      alert('Question was deleted successfully');
+      },
+      () => {
+        alert('Question could not be deleted');
+      })
   }
 
-  editQuestion(subjectId: string, answer: string, question: string): void {
-    console.log(answer, question);
+  editQuestion(questionId: string, answer: string, question: string): void {
     const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
       width: '500px',
       data: { question: question, answer: answer, submitButton: 'Edytuj' },
@@ -203,22 +81,19 @@ export class QuestionsComponent {
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
-      console.log(result)
     });
   }
 
   addQuestion(subjectId: string): void {
-
     const dialogRef = this.dialog.open(AddQuestionDialogComponent, {
       width: '500px',
       data: { question: '', answer: '', submitButton: 'Utwórz' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result)
+      console.log({ ...result, id: subjectId });
+      const data = { ...result, id: subjectId }
+      // this.questionService.createQuestion(data)
     });
-
-
   }
 }

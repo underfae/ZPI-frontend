@@ -13,31 +13,31 @@ import { Question } from '../../core/models/question.model';
 export class StudentDetailsComponent implements OnInit {
   subjectsData: Partial<Subject>[] = [
     {
-      id: '1',
+      _id: '1',
       name: 'Komputerowe przetwarzanie obrazu',
       term: 'I',
       questions: [],
     },
     {
-      id: '2',
+      _id: '2',
       name: 'Modelowanie przestrzenne',
       term: 'I',
       questions: [],
     },
     {
-      id: '3',
+      _id: '3',
       name: 'Komunikacja czlowiek - komputer',
       term: 'I',
       questions: [],
     },
     {
-      id: '4',
+      _id: '4',
       name: 'Technologie audiowizualne',
       term: 'I',
       questions: [],
     },
     {
-      id: '5',
+      _id: '5',
       name: 'Akwizycja i obróbka dźwięku',
       term: 'I',
       questions: [],
@@ -46,17 +46,20 @@ export class StudentDetailsComponent implements OnInit {
 
   questions: Question[] = [
     {
-      id: '1',
+      id:'asdsad',
+      subjectId:'asdsad',
       name: 'Co to jest macierz sztywności?',
       answer: "answer"
     },
     {
-      id: '2',
+      id:'asdsad',
+      subjectId:'asdsad',
       name: 'Przedstawić metody pozyskiwania danych o użytkownikach',
       answer: "answer"
     },
     {
-      id: '3',
+      subjectId:'asdsad',
+      id:'asdsad',
       name: 'Kompresja obrazu - omówić przykład kompresji stratnej i bezstratnej',
       answer: "answer"
     },

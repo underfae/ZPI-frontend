@@ -10,13 +10,13 @@
       <div class="student-information">
         <div class="column1">
           <app-readonly-field name="Kierunek" value="{{student?.study}}"></app-readonly-field>
-          <app-readonly-field name="Specjalizacja" value="{{student?.specialization}}"></app-readonly-field>
+          <app-readonly-field name="Specjalizacja" value="Grafika Komputerowa"></app-readonly-field>
           <app-readonly-field name="Nr albumu" value="{{student?.albumnumber}}"></app-readonly-field>
         </div>
         <div class="column2">
-          <app-readonly-field name="Adres" value="{{student?.address.street}} {{student?.address.houseNumber}}"></app-readonly-field>
-          <app-readonly-field name="Województwo" value="{{student?.address.region}}"></app-readonly-field>
-          <app-readonly-field name="Miasto" value="{{student?.address.city}}"></app-readonly-field>
+          <app-readonly-field name="Adres" value="{{student?.address}} {{student?.houseNumber}}"></app-readonly-field>
+          <app-readonly-field name="Województwo" value="{{student?.region}}"></app-readonly-field>
+          <app-readonly-field name="Miasto" value="{{student?.city}}"></app-readonly-field>
         </div>
         <div class="column3">
           <app-readonly-field name="Data urodzenia" value="{{student?.birthdate | date}}"></app-readonly-field>
