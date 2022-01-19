@@ -14,6 +14,7 @@ export class StudentListComponent implements OnInit {
   limitList: number = 6;
   @ViewChild('showMore') showMore: ElementRef;
   name: string = '';
+  field: string = '';
   constructor(
     private studentService: StudentsService,
     protected router: Router
@@ -58,6 +59,16 @@ export class StudentListComponent implements OnInit {
       this.ngOnInit();
     }
 
+  }
+
+  searchField(): void {
+    if(this.field != ""){
+      this.students = this.students.filter(res => {
+        return res.study.toLocaleLowerCase().match(this.field.toLocaleLowerCase());
+      });
+    } else if(this.field == "") {
+      this.ngOnInit();
+    }
   }
 
 }

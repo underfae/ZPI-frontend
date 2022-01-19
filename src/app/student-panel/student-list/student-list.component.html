@@ -12,11 +12,11 @@
         </div>
         <div class="input-container">
           <i class="fa fa-user"></i>
-          <input class="localization-input" id="localization" type="text" placeholder="Kierunek">
+          <input class="localization-input" id="localization" type="text" (keyup)="searchField()" [(ngModel)]="field" placeholder="Kierunek">
         </div>
-        <div class="button-container">
+        <!-- <div class="button-container">
           <button>Szukaj<i class="fas fa-search"></i></button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
