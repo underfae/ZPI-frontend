@@ -38,33 +38,35 @@
         <div class="subject-name">{{element.name}}</div>
         <div class="semester">Semestr {{element.term}}</div>
       </div>
-      <button mat-button class="show-more" (click)="showMore()" *ngIf="max < subjectsData.length">Zobacz więcej przedmiotów</button>
+      <button mat-button class="show-more" (click)="showMore()" *ngIf="max < subjectsData.length">Zobacz więcej
+        przedmiotów</button>
     </div>
   </ng-container>
 
   <ng-container *ngIf='!examMode'>
     <div class="questions">
-   <div class="action">
-      <p>Wylosuj pytania dla studenta!</p>
-      <button mat-raised-button color='primary' (click)="startExam()">Wylosuj pytania</button>
-   </div>
-   <div class="images">
-     <img src="../../../assets/images/questions.svg">
-   </div>
-  </div>
+      <div class="action">
+        <p>Wylosuj pytania dla studenta!</p>
+        <button mat-raised-button color='primary' (click)="startExam()">Wylosuj pytania</button>
+      </div>
+      <div class="images">
+        <img src="../../../assets/images/questions.svg">
+      </div>
+    </div>
   </ng-container>
 
   <ng-container *ngIf='examMode'>
     <div class="choosen-question">
       <p>Wylosowane pytania</p>
       <div class="cards">
-      <ng-container *ngFor="let question of questions">
-        <div class="question-card">
-        {{question.name}}
-        </div>
-      </ng-container>
+        <ng-container *ngFor="let question of questions">
+          <div #tooltip="matTooltip" class="question-card" [matTooltip]="question.answer"
+            matTooltipPosition="below">
+            {{question.name}}
+          </div>
+        </ng-container>
       </div>
-      <a>Zmień pytania</a>
+      <a (click)="startAgain()" *ngIf="changeButton">Zmień pytania</a>
     </div>
   </ng-container>
 </div>

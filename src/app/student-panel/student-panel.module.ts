@@ -8,6 +8,7 @@ import { StudentDetailsComponent } from "./student-details/student-details.compo
 import { StudentListComponent } from "./student-list/student-list.component";
 import { StudentPanelComponent } from "./student-panel.component";
 import { StudentPanelRoutingModule } from "./student-panel-routing.module";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StudentPanelRoutingModule } from "./student-panel-routing.module";
     CommonModule,
     MatButtonModule,
     StudentPanelRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [StudentPanelComponent]

@@ -1,5 +1,5 @@
 export class Question {
-  id: string;
+  _id: string;
   subjectId: string;
   name: string;
   answer: string;

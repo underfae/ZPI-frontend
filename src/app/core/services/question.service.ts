@@ -16,16 +16,19 @@ export class QuestionService {
 
 
   createQuestion(question: Question) {
-    return this.http.post<Question>(this.url + '/create', JSON.stringify(question));
+    return this.http.post<Question>(this.url + '/create', question);
   }
 
-  //id - question id
   deleteQuestion(id: string) {
     return this.http.post(this.url + '/delete/' + id, id);
   }
 
 
   editQuestion(question: Question): Observable<Question> {
-    return this.http.post<Question>(this.url + '/edit/' + question.id, question);
+    return this.http.post<Question>(this.url + '/edit/' + question._id, question);
+  }
+
+  randomQuestion(): Observable<Question[]> {
+    return this.http.post<Question[]>('http://localhost:8000/api/randQst/t6f6ij97cf7', {});
   }
 }

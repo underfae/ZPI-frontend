@@ -20,7 +20,7 @@ export class AddQuestionDialogComponent {
 }
 
 export interface QuestionData {
-  question: string;
+  name: string;
   answer: string;
   submitButton: string;
 }

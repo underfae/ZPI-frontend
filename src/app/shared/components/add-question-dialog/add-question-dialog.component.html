@@ -4,7 +4,7 @@
   </div>
   <mat-form-field>
     <mat-label>Pytanie</mat-label>
-    <textarea matInput [(ngModel)]="data.question"></textarea>
+    <textarea matInput [(ngModel)]="data.name"></textarea>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Odpowiedź</mat-label>
@@ -13,5 +13,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Anuluj</button>
-  <button mat-button [mat-dialog-close]="{ question: data.question, answer: data.answer}"> {{ data.submitButton }}</button>
+  <button mat-button [mat-dialog-close]="{ name: data.name, answer: data.answer}"> {{ data.submitButton }}</button>
 </div>

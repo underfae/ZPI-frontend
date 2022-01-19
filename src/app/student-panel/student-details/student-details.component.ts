@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Student } from '../../core/models/student.model';
 import { Subject } from '../../core/models/subject.model';
 import { Question } from '../../core/models/question.model';
+import { QuestionService } from 'src/app/core/services/question.service';
 
 @Component({
   selector: 'app-student-details',
@@ -12,6 +13,7 @@ import { Question } from '../../core/models/question.model';
 })
 export class StudentDetailsComponent implements OnInit {
   max: number = 5;
+
   subjectsData: Partial<Subject>[] = [
     {
       _id: '1',
@@ -75,32 +77,14 @@ export class StudentDetailsComponent implements OnInit {
     },
   ];
 
-  questions: Question[] = [
-    {
-      id:'asdsad',
-      subjectId:'asdsad',
-      name: 'Co to jest macierz sztywności?',
-      answer: "answer"
-    },
-    {
-      id:'asdsad',
-      subjectId:'asdsad',
-      name: 'Przedstawić metody pozyskiwania danych o użytkownikach',
-      answer: "answer"
-    },
-    {
-      subjectId:'asdsad',
-      id:'asdsad',
-      name: 'Kompresja obrazu - omówić przykład kompresji stratnej i bezstratnej',
-      answer: "answer"
-    },
-  ];
-
   subjectOpen: boolean = false;
   student: Student;
   examMode: boolean = false;
   date: Date;
-  constructor(protected router: Router, protected route: ActivatedRoute) {
+  questions: Question[];
+  changeButton: boolean = true;
+
+  constructor(protected router: Router, protected route: ActivatedRoute, protected questionService: QuestionService) {
     if (this.router.getCurrentNavigation() !== null) {
       this.student = this.router.getCurrentNavigation()?.extras.state?.data;
     }
@@ -121,5 +105,15 @@ export class StudentDetailsComponent implements OnInit {
 
   startExam(): void {
     this.examMode = true;
+    this.questionService.randomQuestion().subscribe(
+      (result) => {
+        this.questions = result
+      }
+    );
+  }
+
+  startAgain(): void {
+    this.startExam();
+    this.changeButton = false;
   }
 }
