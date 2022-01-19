@@ -8,7 +8,7 @@
       <div class="form">
         <div class="input-container">
           <i class="fas fa-user"></i>
-          <input class="name-input" id="name" type="text" placeholder="Imię i nazwisko">
+          <input class="name-input" id="name-input" type="text" (keyup)="searchStudent()" [(ngModel)]="name" placeholder="Imię i nazwisko">
         </div>
         <div class="input-container">
           <i class="fa fa-user"></i>
@@ -23,12 +23,12 @@
 
   <div class="students-list">
     <p>Lista studentów</p>
-    <ul *ngFor="let student of students | slice:0:limitList">
+    <ul id="students-ul" *ngFor="let student of students | slice:0:limitList">
       <li>
         <div class="student">
           <div class="name"><img src="../../../assets/images/avatar_2.svg">{{student.name}}</div>
-          <div>{{student.field}}</div>
-          <div>{{student.university}}</div>
+          <div>{{student.study}}</div>
+          <div>{{student.albumnumber}}</div>
           <button (click)="showDetails(student)">Zobacz szczegóły</button>
         </div>
       </li>

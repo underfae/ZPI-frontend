@@ -54,7 +54,7 @@
           width: 20%;
           text-align: end;
           display: flex;
-          padding: 0 10px;
+          padding: 0 10px;;
           button {
             width: 100%;
             margin-top: $margin-xs;
@@ -74,10 +74,11 @@
 
         .input-container input::-webkit-input-placeholder {
           text-align: left;
-          border-right: 1px solid $searchbar-color;
           color: $searchbar-color;
           padding: 10px;
           font-size: $fs-regular;
+          border-right: 1px solid $searchbar-color;
+          padding: 10px;
         }
 
         .button-container button {
