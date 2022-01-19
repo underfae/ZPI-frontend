@@ -19,7 +19,7 @@
           <app-readonly-field name="Miasto" value="{{student?.city}}"></app-readonly-field>
         </div>
         <div class="column3">
-          <app-readonly-field name="Data urodzenia" value="{{student?.birthdate | date}}"></app-readonly-field>
+          <app-readonly-field name="Data urodzenia" value="{{student?.birthdate}}"></app-readonly-field>
           <app-readonly-field name="Pesel" value="{{student?.pesel}}"></app-readonly-field>
           <app-readonly-field name="Miejsce urodzenia" value="{{student?.birthplace}}"></app-readonly-field>
         </div>
@@ -34,12 +34,11 @@
   <ng-container *ngIf='!examMode && subjectOpen'>
     <div class="subjects">
       <div class="header"> Przedmioty studenta</div>
-      <div class="subject" *ngFor="let element of subjectsData">
+      <div class="subject" *ngFor="let element of subjectsData | slice:0:[max]">
         <div class="subject-name">{{element.name}}</div>
-        <div class="semester">Semestr {{element.semester}}</div>
-        <button mat-raised-button color='primary'>Zobacz pytania</button>
+        <div class="semester">Semestr {{element.term}}</div>
       </div>
-      <div class="show-more">Zobacz więcej przedmiotów</div>
+      <button mat-button class="show-more" (click)="showMore()" *ngIf="max < subjectsData.length">Zobacz więcej przedmiotów</button>
     </div>
   </ng-container>
 

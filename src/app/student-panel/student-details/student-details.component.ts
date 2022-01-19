@@ -11,7 +11,38 @@ import { Question } from '../../core/models/question.model';
   styleUrls: ['./student-details.component.scss'],
 })
 export class StudentDetailsComponent implements OnInit {
+  max: number = 5;
   subjectsData: Partial<Subject>[] = [
+    {
+      _id: '1',
+      name: 'Komputerowe przetwarzanie obrazu',
+      term: 'I',
+      questions: [],
+    },
+    {
+      _id: '2',
+      name: 'Modelowanie przestrzenne',
+      term: 'III',
+      questions: [],
+    },
+    {
+      _id: '3',
+      name: 'Komunikacja czlowiek - komputer',
+      term: 'I',
+      questions: [],
+    },
+    {
+      _id: '4',
+      name: 'Technologie audiowizualne',
+      term: 'V',
+      questions: [],
+    },
+    {
+      _id: '5',
+      name: 'Akwizycja i obróbka dźwięku',
+      term: 'I',
+      questions: [],
+    },
     {
       _id: '1',
       name: 'Komputerowe przetwarzanie obrazu',
@@ -27,7 +58,7 @@ export class StudentDetailsComponent implements OnInit {
     {
       _id: '3',
       name: 'Komunikacja czlowiek - komputer',
-      term: 'I',
+      term: 'II',
       questions: [],
     },
     {
@@ -39,7 +70,7 @@ export class StudentDetailsComponent implements OnInit {
     {
       _id: '5',
       name: 'Akwizycja i obróbka dźwięku',
-      term: 'I',
+      term: 'IV',
       questions: [],
     },
   ];
@@ -68,7 +99,7 @@ export class StudentDetailsComponent implements OnInit {
   subjectOpen: boolean = false;
   student: Student;
   examMode: boolean = false;
-
+  date: Date;
   constructor(protected router: Router, protected route: ActivatedRoute) {
     if (this.router.getCurrentNavigation() !== null) {
       this.student = this.router.getCurrentNavigation()?.extras.state?.data;
@@ -81,6 +112,9 @@ export class StudentDetailsComponent implements OnInit {
     }
   }
 
+  showMore(): void {
+    this.max = this.max + 5;
+  }
   downloadSubjects(): void {
     this.subjectOpen = true;
   }

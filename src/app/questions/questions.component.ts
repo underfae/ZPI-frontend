@@ -45,8 +45,8 @@ export class QuestionsComponent implements OnInit {
   dataSource;
   displayedColumns: string[] = [
     'name',
-    // 'study',
-    // 'specialization',
+    'obieralny',
+    'term',
     'options',
   ];
 
@@ -91,9 +91,20 @@ export class QuestionsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log({ ...result, id: subjectId });
-      const data = { ...result, id: subjectId }
-      // this.questionService.createQuestion(data)
+      console.log({ ...result, subjectId: subjectId });
+      const data = { ...result, subjectId: subjectId }
+      this.questionService.createQuestion(data).subscribe(
+        (result) => {
+          console.log(result)
+        alert('Question was created successfully');
+        },
+        () => {
+          alert('Question could not be created');
+        })
     });
+  }
+
+  checkObieralny(obieralny: string): string {
+    return obieralny == "true" ? "obieralny": "nieobieralny";
   }
 }

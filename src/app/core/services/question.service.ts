@@ -14,9 +14,9 @@ export class QuestionService {
 
   constructor(private http: HttpClient) {}
 
-  
+
   createQuestion(question: Question) {
-    return this.http.post<Question>(this.url + '/create', question);
+    return this.http.post<Question>(this.url + '/create', JSON.stringify(question));
   }
 
   //id - question id
